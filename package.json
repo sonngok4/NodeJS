@@ -1,4 +1,11 @@
 {
   "name": "demo",
-  "packageManager": "yarn@4.4.1"
+  "type": "module",
+  "packageManager": "yarn@4.4.1",
+  "dependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  }
 }
