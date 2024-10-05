@@ -3,6 +3,7 @@
   "type": "module",
   "packageManager": "yarn@4.4.1",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^4.21.0",
     "nodemon": "^3.1.4"
   },
