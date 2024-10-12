@@ -1,35 +1,10 @@
 import express from "express";
+import HomeController from "../controllers/home_controller.mjs";
+import CvController from "../controllers/cv_controller.mjs";
 const rootRouter = express.Router();
 
-let workExperience = [
-  {
-    name: "Front End Developer",
-    start_date: "Jan 2015",
-    end_date: "Jan 2015",
-    description:
-      "Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.",
-  },
-  {
-    name: "Back end Developer",
-    start_date: "Jan 2015",
-    end_date: "Jan 2015",
-    description:
-      "Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.",
-  },
-];
-
-rootRouter.get("/about", (req, res) => {
-  res.send(`<h1> Hello About Page!!</h1>`);
-});
-
-rootRouter.get("/", (req, res) => {
-  console.log(req.query);
-  res.render("index", { title: "Home Page", workExperience });
-});
-
-rootRouter.get("/cv/:id", (req, res) => {
-  console.log(req.params);
-  res.render("cv", { title: "Home Page", workExperience });
-});
+rootRouter.get("/about", HomeController.about);
+rootRouter.get("/", HomeController.index);
+rootRouter.get("/cv/:id", CvController.detail);
 
 export default rootRouter;
