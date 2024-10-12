@@ -1,13 +1,5 @@
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Roboto", sans-serif;
-}
-.w3-text-grey {
-  color: rgb(228, 17, 186) !important;
+main {
+  padding: 20px 0;
+  width: 85%;
+  margin: 0 auto;
 }

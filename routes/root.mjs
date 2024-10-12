@@ -23,7 +23,13 @@ rootRouter.get("/about", (req, res) => {
 });
 
 rootRouter.get("/", (req, res) => {
+  console.log(req.query);
   res.render("index", { title: "Home Page", workExperience });
+});
+
+rootRouter.get("/cv/:id", (req, res) => {
+  console.log(req.params);
+  res.render("cv", { title: "Home Page", workExperience });
 });
 
 export default rootRouter;
