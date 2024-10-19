@@ -6,6 +6,7 @@
     "autoprefixer": "^10.4.20",
     "ejs": "^3.1.10",
     "express": "^4.21.0",
+    "mongoose": "^8.7.2",
     "nodemon": "^3.1.4",
     "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",

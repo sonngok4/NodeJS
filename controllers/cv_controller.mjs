@@ -1,21 +1,10 @@
+import User from "../models/user.mjs";
 class CvController {
-  static detail(req, res) {
-    let workExperience = [
-      {
-        name: "Front End Developer",
-        start_date: "Jan 2015",
-        end_date: "Jan 2015",
-        description:
-          "Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.",
-      },
-      {
-        name: "Back end Developer",
-        start_date: "Jan 2015",
-        end_date: "Jan 2015",
-        description:
-          "Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.",
-      },
-    ];
+  static async detail(req, res) {
+    let data = await User.find({});
+    let user = data[0];
+    console.log(user.workExperience);
+    let workExperience = user.workExperience;
     console.log(req.params);
     res.render("cv", { title: "Home Page", workExperience });
   }

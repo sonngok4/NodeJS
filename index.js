@@ -1,5 +1,7 @@
 import express from "express";
 import rootRouter from "./routes/root.mjs";
+import { connectDB } from "./config/connectDB.mjs";
+connectDB();
 const app = express();
 const port = 3000;
 
