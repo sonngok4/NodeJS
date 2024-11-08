@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title><%= title %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100">
+<%- include('layouts/header'); %>
+  <main class="container mx-auto px-4 py-8">
+    <div class="bg-white rounded-lg shadow p-6">
+      <div class="mb-6">
+        <form class="flex gap-4 items-end">
+          <div>
+            <label class="block text-sm font-medium mb-1">Tiêu đề hoặc Mô tả</label>
+            <input value="<%= search %>" type="text" name="search" class="border rounded p-2">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Trạng thái</label>
+            <select value="<%= status %>" name="status" class="border rounded p-2">
+              <option value="">Tất cả</option>
+              <option value="New">New</option>
+              <option value="Pending">Pending</option>
+              <option value="Done">Done</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Ngày hoàn thành</label>
+            <div class="flex gap-2">
+              <input  type="date" name="startDate" class="border rounded p-2">
+              <input  type="date" name="endDate" class="border rounded p-2">
+            </div>
+          </div>
+          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Tìm kiếm</button>
+        </form>
+      </div>
+
+      <table class="w-full">
+        <thead>
+          <tr class="bg-gray-50">
+            <th class="p-3 text-left">Tiêu đề</th>
+            <th class="p-3 text-left">Mô Tả</th>
+            <th class="p-3 text-left">Trạng thái</th>
+            <th class="p-3 text-left">Due Date</th>
+            <th class="p-3 text-left">Điểm nhiệm vụ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% tasks.forEach(task=> { %>
+            <tr class="hover:bg-gray-50 cursor-pointer" onclick="window.location.href='/task/<%= task._id %>'">
+              <td class="p-3">
+                <%= task.title %>
+              </td>
+              <td class="p-3">
+                <%= task.description %>
+              </td>
+              <td class="p-3">
+                <%= task.status %>
+              </td>
+              <td class="p-3">
+                <%= task.dueDate.toLocaleDateString() %>
+              </td>
+              <td class="p-3">
+                <%= task.points %>
+              </td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <%- include('layouts/footer'); %>
+  </body>
+  
+  </html>

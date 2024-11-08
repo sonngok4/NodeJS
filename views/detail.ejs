@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title><%= title  %>
+        </title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="bg-gray-100">
+        <%- include('layouts/header') %>
+
+            <main class="container mx-auto px-4 py-8">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h1 class="text-2xl font-bold mb-6">Công việc #<%= task._id %>
+                    </h1>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium">Tiêu đề:</p>
+                            <p>
+                                <%= task.title %>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Mô Tả:</p>
+                            <p>
+                                <%= task.description %>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Trạng thái:</p>
+                            <p>
+                                <%= task.status %>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Due Date:</p>
+                            <p>
+                                <%= task.dueDate.toLocaleDateString() %>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Điểm nhiệm vụ:</p>
+                            <p>
+                                <%= task.points %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <%- include('layouts/footer') %>
+    </body>
+
+</html>
