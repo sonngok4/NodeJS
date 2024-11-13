@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <style>
+    body {
+      padding: 50px;
+      font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+
+  <body>
+    <% user=user || {} %>
+      <% if (user.username) { %>
+        <h1>Hi <%= user.username %>!</h1>
+        <a href="/logout">Log out</a>
+        <% } else { %>
+          <a href="/login">Log in</a>
+          <% } %>
+  </body>
+
+</html>
