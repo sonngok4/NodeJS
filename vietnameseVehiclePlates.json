@@ -1,0 +1,250 @@
+[
+  {
+    "province": "Hà Nội",
+    "plateNumber": "29,30,31,32,33,40"
+  },
+  {
+    "province": "Thái Nguyên",
+    "plateNumber": "20"
+  },
+  {
+    "province": "Phú Thọ",
+    "plateNumber": "19"
+  },
+  {
+    "province": "Bắc Giang",
+    "plateNumber": "98"
+  },
+  {
+    "province": "Hòa bình",
+    "plateNumber": "28"
+  },
+  {
+    "province": "Bắc Ninh",
+    "plateNumber": "99"
+  },
+  {
+    "province": "Hà Nam",
+    "plateNumber": "90"
+  },
+  {
+    "province": "Hải Dương",
+    "plateNumber": "34"
+  },
+  {
+    "province": "Hưng Yên",
+    "plateNumber": "89"
+  },
+  {
+    "province": "Vĩnh Phúc",
+    "plateNumber": "88"
+  },
+  {
+    "province": "Quảng Ninh",
+    "plateNumber": "14"
+  },
+  {
+    "province": "Hải Phòng",
+    "plateNumber": "15, 16"
+  },
+  {
+    "province": "Nam Định",
+    "plateNumber": "18"
+  },
+  {
+    "province": "Ninh Bình",
+    "plateNumber": "35"
+  },
+  {
+    "province": "Thái Bình",
+    "plateNumber": "17"
+  },
+  {
+    "province": "Hà Giang",
+    "plateNumber": "23"
+  },
+  {
+    "province": "Cao Bằng",
+    "plateNumber": "11"
+  },
+  {
+    "province": "Lào Cai",
+    "plateNumber": "24"
+  },
+  {
+    "province": "Bắc Cạn",
+    "plateNumber": "97"
+  },
+  {
+    "province": "Lạng Sơn",
+    "plateNumber": "12"
+  },
+  {
+    "province": "Tuyên Quang",
+    "plateNumber": "22"
+  },
+  {
+    "province": "Yên Bái",
+    "plateNumber": "21"
+  },
+  {
+    "province": "Điện Biên",
+    "plateNumber": "27"
+  },
+  {
+    "province": "Lai Châu",
+    "plateNumber": "25"
+  },
+  {
+    "province": "Sơn La",
+    "plateNumber": "26"
+  },
+  {
+    "province": "Thanh Hóa",
+    "plateNumber": "36"
+  },
+  {
+    "province": "Nghệ An",
+    "plateNumber": "37"
+  },
+  {
+    "province": "Hà Tĩnh",
+    "plateNumber": "38"
+  },
+  {
+    "province": "Quảng Bình",
+    "plateNumber": "73"
+  },
+  {
+    "province": "Quảng Trị",
+    "plateNumber": "74"
+  },
+  {
+    "province": "Thừa Thiên Huế",
+    "plateNumber": "75"
+  },
+  {
+    "province": "Đà Nẵng",
+    "plateNumber": "43"
+  },
+  {
+    "province": "Quảng Nam",
+    "plateNumber": "92"
+  },
+  {
+    "province": "Quảng Ngãi",
+    "plateNumber": "76"
+  },
+  {
+    "province": "Bình Định",
+    "plateNumber": "77"
+  },
+  {
+    "province": "Phú Yên",
+    "plateNumber": "78"
+  },
+  {
+    "province": "Khánh Hòa",
+    "plateNumber": "79"
+  },
+  {
+    "province": "Ninh Thuận",
+    "plateNumber": "85"
+  },
+  {
+    "province": "Bình Thuận",
+    "plateNumber": "86"
+  },
+  {
+    "province": "Kon Tum",
+    "plateNumber": "82"
+  },
+  {
+    "province": "Gia Lai",
+    "plateNumber": "81"
+  },
+  {
+    "province": "Dak Lak",
+    "plateNumber": "47"
+  },
+  {
+    "province": "Đắc Nông",
+    "plateNumber": "48"
+  },
+  {
+    "province": "Lâm Đồng",
+    "plateNumber": "49"
+  },
+  {
+    "province": "Hồ Chí Minh",
+    "plateNumber": "41,50,51,52,53,54,55,56,57,58,59"
+  },
+  {
+    "province": "Bình Phước",
+    "plateNumber": "93"
+  },
+  {
+    "province": "Bình Dương",
+    "plateNumber": "61"
+  },
+  {
+    "province": "Đồng Nai",
+    "plateNumber": "38,60"
+  },
+  {
+    "province": "Tây Ninh",
+    "plateNumber": "70"
+  },
+  {
+    "province": "Bà Rịa Vũng Tàu",
+    "plateNumber": "72"
+  },
+  {
+    "province": "Cần Thơ",
+    "plateNumber": "65"
+  },
+  {
+    "province": "Long An",
+    "plateNumber": "62"
+  },
+  {
+    "province": "Đồng Tháp",
+    "plateNumber": "66"
+  },
+  {
+    "province": "Tiền Giang",
+    "plateNumber": "63"
+  },
+  {
+    "province": "An Giang",
+    "plateNumber": "67"
+  },
+  {
+    "province": "Bến Tre",
+    "plateNumber": "71"
+  },
+  {
+    "province": "Vĩnh Long",
+    "plateNumber": "64"
+  },
+  {
+    "province": "Hậu Giang",
+    "plateNumber": "95"
+  },
+  {
+    "province": "Kiên Giang",
+    "plateNumber": "68"
+  },
+  {
+    "province": "Sóc Trăng",
+    "plateNumber": "83"
+  },
+  {
+    "province": "Bạc Liêu",
+    "plateNumber": "94"
+  },
+  {
+    "province": "Cà Mau",
+    "plateNumber": "69"
+  }
+]
