@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Kết quả tìm kiếm</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            .results {
+                margin-top: 20px;
+            }
+
+            .buyer-card {
+                background: #f5f5f5;
+                padding: 15px;
+                margin-bottom: 10px;
+                border-radius: 4px;
+            }
+
+            .back-button {
+                background: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 4px;
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+
+            .no-results {
+                color: #666;
+                font-style: italic;
+            }
+        </style>
+    </head>
+
+    <body>
+        <a href="/buyers" class="back-button">← Quay lại tìm kiếm</a>
+
+        <h1>Kết quả tìm kiếm</h1>
+
+        <div class="results">
+            <% if (buyers.length> 0) { %>
+                <% buyers.forEach(buyer=> { %>
+                    <div class="buyer-card">
+                        <p><strong>Tên:</strong>
+                            <%= buyer.name %>
+                        </p>
+                        <p><strong>Tuổi:</strong>
+                            <%= buyer.age %>
+                        </p>
+                        <p><strong>Email:</strong>
+                            <%= buyer.email %>
+                        </p>
+                        <p><strong>Giới tính:</strong>
+                            <%= buyer.gender %>
+                        </p>
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <p class="no-results">Không tìm thấy kết quả nào.</p>
+                            <% } %>
+        </div>
+    </body>
+
+</html>

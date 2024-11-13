@@ -1,0 +1,249 @@
+<%- include('layouts/header'); %>
+
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .search-form {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .reset-button {
+            background: #f44336;
+        }
+
+        .reset-button:hover {
+            background: #d32f2f;
+        }
+
+        #customSearch {
+            display: none;
+        }
+
+        .results-table {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 30px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .results-table th,
+        .results-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .results-table th {
+            background: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .results-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .table-title {
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
+
+    <div class="main-content">
+        <form class="search-form" action="/buyers/search" method="POST">
+            <div class="form-group">
+                <label for="searchType">Chọn loại tìm kiếm:</label>
+                <select name="searchType" id="searchType" onchange="toggleCustomSearch()">
+                    <option value="above20">Tuổi > 20</option>
+                    <option value="above23">Tuổi >= 23</option>
+                    <option value="below20">Tuổi <= 20</option>
+                    <option value="age20or30">Tuổi = 20 hoặc 30</option>
+                    <option value="dongaemail">Email đuôi donga.edu.vn</option>
+                    <option value="male">Giới tính Nam</option>
+                    <option value="vanorvan">Tên Văn hoặc Vân</option>
+                    <option value="ngocmale">Tên Ngọc và giới tính Nam</option>
+                    <option value="custom">Tìm kiếm tùy chỉnh</option>
+                </select>
+            </div>
+
+            <div id="customSearch">
+                <div class="form-group">
+                    <label for="ageValue">Tuổi (VD: > 20, >= 23, = 25):</label>
+                    <input type="text" name="ageValue" placeholder="Nhập điều kiện tuổi">
+                </div>
+
+                <div class="form-group">
+                    <label for="emailDomain">Tên miền email:</label>
+                    <input type="text" name="emailDomain" placeholder="VD: donga.edu.vn">
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Giới tính:</label>
+                    <select name="gender">
+                        <option value="">Chọn giới tính</option>
+                        <option value="nam">Nam</option>
+                        <option value="nữ">Nữ</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Tên:</label>
+                    <input type="text" name="name" placeholder="Nhập tên cần tìm">
+                </div>
+            </div>
+
+            <button type="submit">Tìm kiếm</button>
+            <button type="button" class="reset-button" onclick="window.location.href='/buyers'">Xóa tìm kiếm</button>
+        </form>
+
+        <% if (error) { %>
+            <div class="error-message">
+                <%= error %>
+            </div>
+            <% } %>
+
+                <% if (searchResults) { %>
+                    <h2 class="table-title">Kết quả tìm kiếm (<%= searchResults.length %> kết quả)</h2>
+                    <% if (searchResults.length> 0) { %>
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Tên</th>
+                                    <th>Tuổi</th>
+                                    <th>Email</th>
+                                    <th>Giới tính</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% searchResults.forEach(buyer=> { %>
+                                    <tr>
+                                        <td>
+                                            <%= buyer.name %>
+                                        </td>
+                                        <td>
+                                            <%= buyer.age %>
+                                        </td>
+                                        <td>
+                                            <%= buyer.email %>
+                                        </td>
+                                        <td>
+                                            <%= buyer.gender %>
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                            </tbody>
+                        </table>
+                        <% } else { %>
+                            <div class="no-results">Không tìm thấy kết quả nào.</div>
+                            <% } %>
+                                <% } else { %>
+                                    <h2 class="table-title">Danh sách Buyers</h2>
+                                    <table class="results-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Tên</th>
+                                                <th>Tuổi</th>
+                                                <th>Email</th>
+                                                <th>Giới tính</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% buyers.forEach(buyer=> { %>
+                                                <tr>
+                                                    <td>
+                                                        <%= buyer.name %>
+                                                    </td>
+                                                    <td>
+                                                        <%= buyer.age %>
+                                                    </td>
+                                                    <td>
+                                                        <%= buyer.email %>
+                                                    </td>
+                                                    <td>
+                                                        <%= buyer.gender %>
+                                                    </td>
+                                                </tr>
+                                                <% }); %>
+                                        </tbody>
+                                    </table>
+                                    <% } %>
+    </div>
+
+    <script>
+        function toggleCustomSearch() {
+            const searchType = document.getElementById('searchType').value;
+            const customSearch = document.getElementById('customSearch');
+            customSearch.style.display = searchType === 'custom' ? 'block' : 'none';
+        }
+    </script>
+
+    <%- include('layouts/footer'); %>

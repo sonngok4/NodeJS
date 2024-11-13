@@ -1,0 +1,13 @@
+main {
+  min-height: 70vh;
+  padding: 20px 0;
+  width: 85%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 36px !important;
+}
+.color-red {
+  color: red;
+}
