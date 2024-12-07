@@ -1,7 +1,7 @@
 // routes/bookings.js
 const express = require('express');
 const router = express.Router();
-const Booking = require('../models/Booking');
+const Booking = require('../models/Booking.model');
 const moment = require('moment');
 const bookingController = require('../controllers/bookings.controller');
 

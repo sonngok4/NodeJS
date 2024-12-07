@@ -1,5 +1,5 @@
 
-const Booking = require('../models/Booking');
+const Booking = require('../models/Booking.model');
 class bookingController {
     static async index(req, res) {
         try {

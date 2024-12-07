@@ -7,8 +7,8 @@ var logger = require('morgan');
 const expressLayouts = require('express-ejs-layouts'); 
 const connectDB = require('./configs/database.config');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./routes/index.routes');
+var usersRouter = require('./routes/users.routes');
 
 var app = express();
 
@@ -28,10 +28,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 const bookingRoutes = require('./routes/bookings.routes');
+const usersRoutes = require('./routes/users.routes');
+const authRoutes = require('./routes/auth.routes');
+const serviceRoutes = require('./routes/services.routes');
+const reservationRoutes = require('./routes/reservations.routes');
 
 app.use('/', bookingRoutes);
 // app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/users', usersRoutes);
+app.use('/auth', authRoutes);
+app.use('/services', serviceRoutes);
+app.use('/reservations', reservationRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
